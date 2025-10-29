@@ -239,6 +239,10 @@ main.chat-started .chat-input-wrapper {
 .message.user {
   color: #fff;
   align-self: flex-end;
+  border: 1px solid #333;   /* dark grey border */
+  border-radius: 8px;       /* rounded corners */
+  padding: 6px 10px;        /* spacing inside the border */
+  background-color: #444;   /* optional: dark grey background */
 }
 
 .message.ai ul {
