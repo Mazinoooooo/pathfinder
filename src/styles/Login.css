@@ -1,0 +1,582 @@
+.modal-overlay-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal-content-login {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.login-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  width: 100%;
+  padding: 1rem;
+  background: #fc2d2d;
+  color: white;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-button:hover {
+  background: #e02525;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+.google-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+}
+
+.google-btn:active {
+  transform: scale(0.98);
+}
+
+.google-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.welcome {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  color: #161616;
+}
+
+.sub-text {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  color: #161616;
+  font-size: 16px;
+}
+
+.login-greeting {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+label.Email, label.Password {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 0.5rem;
+}
+
+.form-group-remempassword {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #161616;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-group-remempassword a {
+  color: #fc2d2d;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.form-group-remempassword a:hover {
+  text-decoration: underline;
+}
+
+.form-group-email {
+  display: block;
+  margin-bottom: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.form-group-password {
+  margin-bottom: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+  position: relative;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.remember-me input {
+  margin-right: 0.3rem;
+  margin-left: 0.5rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.login-email {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem 1rem;
+  border-radius: 13px;
+  font-size: 1em;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.password {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem 1rem;
+  padding-right: 3rem;
+  border-radius: 13px;
+  font-size: 1em;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(15%);
+  cursor: pointer;
+  color: #999;
+  font-size: 1.2em;
+  transition: color 0.2s ease;
+}
+
+.eye-icon:hover {
+  color: #666;
+}
+
+.login-email:focus, .password:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.sign-up {
+  color: #333;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.sign-up-link a {
+  color: #fc2d2d;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.sign-up-link a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .modal-overlay-login {
+    padding: 10px;
+  }
+
+  .modal-content-login {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .login-greeting {
+    font-size: 2rem;
+  }
+
+  .sub-text {
+    font-size: 14px;
+  }
+
+  label.Email, label.Password {
+    font-size: 14px;
+    margin-left: 0.3rem;
+  }
+
+  .login-email,
+  .password {
+    padding: 0.9rem;
+    font-size: 0.95em;
+    border-radius: 11px;
+  }
+
+  .password {
+    padding-right: 2.8rem;
+  }
+
+  .eye-icon {
+    font-size: 1.1em;
+    right: 12px;
+  }
+
+  .form-group-remempassword {
+    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .remember-me {
+    margin-left: 0;
+  }
+
+  .remember-me input {
+    margin-left: 0;
+  }
+
+  .login-button,
+  .google-btn {
+    padding: 0.9rem;
+    font-size: 0.95em;
+    border-radius: 11px;
+  }
+
+  .google-icon {
+    font-size: 1.1rem;
+  }
+
+  .sign-up {
+    font-size: 0.85rem;
+  }
+
+  .modal-close {
+    font-size: 1.3rem;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+/* Mobile Medium (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .modal-overlay-login {
+    padding: 12px;
+  }
+
+  .modal-content-login {
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    max-width: 92%;
+    max-height: 88vh;
+  }
+
+  .login-greeting {
+    font-size: 2.2rem;
+  }
+
+  .sub-text {
+    font-size: 15px;
+  }
+
+  label.Email, label.Password {
+    font-size: 14px;
+  }
+
+  .login-email,
+  .password {
+    padding: 0.95rem;
+    font-size: 0.98em;
+    border-radius: 12px;
+  }
+
+  .password {
+    padding-right: 2.9rem;
+  }
+
+  .form-group-remempassword {
+    font-size: 0.88rem;
+  }
+
+  .login-button,
+  .google-btn {
+    padding: 0.95rem;
+    font-size: 0.98em;
+    border-radius: 12px;
+  }
+
+  .sign-up {
+    font-size: 0.88rem;
+  }
+
+  .modal-close {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-content-login {
+    padding: 2.8rem;
+    width: 480px;
+  }
+
+  .login-greeting {
+    font-size: 2.3rem;
+  }
+}
+
+/* Laptop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .modal-content-login {
+    padding: 3rem;
+    width: 500px;
+  }
+
+  .login-greeting {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop Large (1441px and above) */
+@media (min-width: 1441px) {
+  .modal-content-login {
+    padding: 3.5rem;
+    width: 550px;
+    border-radius: 22px;
+  }
+
+  .login-greeting {
+    font-size: 2.8rem;
+  }
+
+  .sub-text {
+    font-size: 17px;
+  }
+
+  label.Email, label.Password {
+    font-size: 16px;
+    margin-left: 0.6rem;
+  }
+
+  .login-email,
+  .password {
+    padding: 1.1rem;
+    font-size: 1.05em;
+    border-radius: 14px;
+  }
+
+  .password {
+    padding-right: 3.2rem;
+  }
+
+  .eye-icon {
+    font-size: 1.3em;
+    right: 17px;
+  }
+
+  .form-group-remempassword {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .login-button,
+  .google-btn {
+    padding: 1.1rem;
+    font-size: 1.05em;
+    border-radius: 14px;
+  }
+
+  .google-icon {
+    font-size: 1.3rem;
+  }
+
+  .sign-up {
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+  }
+
+  .modal-close {
+    font-size: 1.6rem;
+    top: 12px;
+    right: 15px;
+  }
+}
+
+/* Landscape Mobile Fix */
+@media (max-width: 768px) and (orientation: landscape) {
+  .modal-content-login {
+    padding: 1.5rem;
+    max-height: 80vh;
+  }
+
+  .login-greeting {
+    font-size: 1.8rem;
+  }
+
+  .sub-text {
+    font-size: 13px;
+    margin-bottom: 0.5rem;
+  }
+
+  label.Email, label.Password {
+    font-size: 13px;
+  }
+
+  .login-email,
+  .password {
+    padding: 0.7rem;
+    font-size: 0.9em;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .password {
+    padding-right: 2.5rem;
+  }
+
+  .eye-icon {
+    font-size: 1em;
+  }
+
+  .form-group-remempassword {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .login-button,
+  .google-btn {
+    padding: 0.8rem;
+    font-size: 0.9em;
+    margin-bottom: 0.5rem;
+  }
+
+  .google-btn {
+    margin-top: 0.3rem;
+  }
+
+  .sign-up {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Extra Wide Screens */
+@media (min-width: 1920px) {
+  .modal-content-login {
+    padding: 4rem;
+    width: 600px;
+    border-radius: 24px;
+  }
+
+  .login-greeting {
+    font-size: 3rem;
+  }
+
+  .sub-text {
+    font-size: 18px;
+  }
+
+  label.Email, label.Password {
+    font-size: 17px;
+  }
+
+  .login-email,
+  .password {
+    padding: 1.2rem;
+    font-size: 1.1em;
+  }
+
+  .eye-icon {
+    font-size: 1.4em;
+  }
+
+  .login-button,
+  .google-btn {
+    padding: 1.2rem;
+    font-size: 1.1em;
+  }
+}

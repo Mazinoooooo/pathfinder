@@ -1,0 +1,654 @@
+.settings-page-wrapper {
+  background-color: #1e1e1e;
+  min-height: calc(100vh - 65px);
+  padding: 20px;
+}
+
+.settings-page-wrapper .wrapper {
+  background-color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+.settings-page-wrapper .overview-card {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.settings-page-wrapper .overview-photo-inline {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.settings-page-wrapper .overview-photo-inline .img {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+  margin-bottom: 10px;
+}
+
+.settings-page-wrapper .overview-photo h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.settings-page-wrapper .profile-content {
+  flex: 2 1 300px;
+  min-width: 0;
+  background-color: #d0d0d0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.settings-page-wrapper .tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 5px 15px 10px 5px;
+  border-bottom: 1px solid #bbb;
+}
+
+.settings-page-wrapper .tab {
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  color: #555;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.settings-page-wrapper .tab:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.settings-page-wrapper .tab.active {
+  color: #007bff;
+}
+
+.settings-page-wrapper .tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #007bff;
+}
+
+.settings-page-wrapper select,
+.settings-page-wrapper input,
+.settings-page-wrapper textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+
+.settings-page-wrapper select:focus,
+.settings-page-wrapper input:focus,
+.settings-page-wrapper textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.settings-page-wrapper textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.settings-page-wrapper .btn-blue {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.settings-page-wrapper .btn-blue:hover {
+  background-color: #0056b3;
+}
+
+.settings-page-wrapper .btn-blue:active {
+  transform: scale(0.98);
+}
+
+.settings-page-wrapper .btn-blue:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.settings-page-wrapper .section {
+  padding: 0 20px 20px;
+}
+
+.settings-page-wrapper .section:first-of-type {
+  padding-top: 15px;
+}
+
+.settings-page-wrapper .section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.settings-page-wrapper .info-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: separate;
+  font-size: 14px;
+}
+
+.settings-page-wrapper .info-table td {
+  padding: 8px 0;
+  vertical-align: top;
+}
+
+.settings-page-wrapper .info-table td:first-child {
+  font-weight: 600;
+  color: #333;
+  width: 35%;
+  padding-right: 15px;
+}
+
+.settings-page-wrapper .info-table td:last-child {
+  color: #555;
+}
+
+.settings-page-wrapper .tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.settings-page-wrapper .tag {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.settings-page-wrapper .saving-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.settings-page-wrapper .spinner-icon {
+  font-size: 16px;
+}
+
+.settings-page-wrapper .add-tag-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+
+.settings-page-wrapper .add-tag-btn:hover {
+  background-color: #7a7a7a;
+  color: #f0f0f0;
+  border-color: #7a7a7a;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .settings-page-wrapper {
+    padding: 12px 8px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 15px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .settings-page-wrapper .img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .settings-page-wrapper .overview-photo h3 {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .settings-page-wrapper .profile-content {
+    flex: 1 1 100%;
+    border-radius: 12px;
+  }
+
+  .settings-page-wrapper .tabs {
+    margin: 0;
+    padding: 8px 8px 0;
+    gap: 0;
+    border-bottom: 1px solid #bbb;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .settings-page-wrapper .tab {
+    padding: 10px 12px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .settings-page-wrapper .section {
+    padding: 12px 12px 16px;
+  }
+
+  .settings-page-wrapper .section h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .settings-page-wrapper .info-table {
+    font-size: 13px;
+  }
+
+  .settings-page-wrapper .info-table td {
+    padding: 6px 0;
+    display: block;
+    width: 100% !important;
+  }
+
+  .settings-page-wrapper .info-table td:first-child {
+    padding-right: 0;
+    padding-bottom: 2px;
+  }
+
+  .settings-page-wrapper .info-table tr {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .settings-page-wrapper select,
+  .settings-page-wrapper input,
+  .settings-page-wrapper textarea {
+    padding: 9px 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .settings-page-wrapper textarea {
+    min-height: 80px;
+  }
+
+  .settings-page-wrapper .btn-blue {
+    padding: 10px 16px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .settings-page-wrapper .tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .settings-page-wrapper .add-tag-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Medium (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .settings-page-wrapper {
+    padding: 16px 12px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 16px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .settings-page-wrapper .img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .settings-page-wrapper .overview-photo h3 {
+    font-size: 15px;
+  }
+
+  .settings-page-wrapper .profile-content {
+    flex: 1 1 100%;
+    border-radius: 14px;
+  }
+
+  .settings-page-wrapper .tabs {
+    margin: 0;
+    padding: 10px 10px 0;
+    gap: 5px;
+  }
+
+  .settings-page-wrapper .tab {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .settings-page-wrapper .section {
+    padding: 14px 16px 18px;
+  }
+
+  .settings-page-wrapper .section h4 {
+    font-size: 15px;
+  }
+
+  .settings-page-wrapper .info-table {
+    font-size: 13px;
+  }
+
+  .settings-page-wrapper .info-table td:first-child {
+    width: 40%;
+  }
+
+  .settings-page-wrapper select,
+  .settings-page-wrapper input,
+  .settings-page-wrapper textarea {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+
+  .settings-page-wrapper .btn-blue {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .settings-page-wrapper {
+    padding: 20px 16px;
+  }
+
+  .settings-page-wrapper .wrapper {
+    max-width: 700px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 0 1 220px;
+    min-height: 140px;
+  }
+
+  .settings-page-wrapper .profile-content {
+    flex: 2 1 400px;
+  }
+
+  .settings-page-wrapper .section {
+    padding: 16px 18px 20px;
+  }
+
+  .settings-page-wrapper .info-table {
+    max-width: 500px;
+  }
+
+  .settings-page-wrapper .info-table td:first-child {
+    width: 35%;
+  }
+}
+
+/* Laptop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .settings-page-wrapper {
+    padding: 30px 24px;
+  }
+
+  .settings-page-wrapper .wrapper {
+    max-width: 900px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 20px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 0 1 240px;
+    min-height: 150px;
+  }
+
+  .settings-page-wrapper .profile-content {
+    flex: 2 1 500px;
+  }
+
+  .settings-page-wrapper .info-table {
+    max-width: 550px;
+  }
+}
+
+/* Desktop Large (1441px and above) */
+@media (min-width: 1441px) {
+  .settings-page-wrapper {
+    padding: 40px 32px;
+  }
+
+  .settings-page-wrapper .wrapper {
+    max-width: 1300px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 0 1 260px;
+    min-height: 160px;
+    padding: 24px;
+  }
+
+  .settings-page-wrapper .img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .settings-page-wrapper .overview-photo h3 {
+    font-size: 17px;
+  }
+
+  .settings-page-wrapper .profile-content {
+    flex: 2 1 600px;
+  }
+
+  .settings-page-wrapper .tabs {
+    gap: 12px;
+  }
+
+  .settings-page-wrapper .tab {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
+
+  .settings-page-wrapper .section {
+    padding: 18px 24px 24px;
+  }
+
+  .settings-page-wrapper .section h4 {
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+
+  .settings-page-wrapper .info-table {
+    font-size: 15px;
+    max-width: 650px;
+  }
+
+  .settings-page-wrapper .info-table td {
+    padding: 10px 0;
+  }
+
+  .settings-page-wrapper select,
+  .settings-page-wrapper input,
+  .settings-page-wrapper textarea {
+    padding: 11px 14px;
+    font-size: 15px;
+  }
+
+  .settings-page-wrapper textarea {
+    min-height: 120px;
+  }
+
+  .settings-page-wrapper .btn-blue {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .settings-page-wrapper .tag {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+
+  .settings-page-wrapper .add-tag-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+/* Landscape Mobile Fix */
+@media (max-width: 768px) and (orientation: landscape) {
+  .settings-page-wrapper {
+    padding: 10px 12px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .settings-page-wrapper .overview-photo {
+    flex: 0 1 180px;
+    min-height: 100px;
+    padding: 12px;
+  }
+
+  .settings-page-wrapper .img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .settings-page-wrapper .overview-photo h3 {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  .settings-page-wrapper .section {
+    padding: 10px 14px 14px;
+  }
+
+  .settings-page-wrapper .section h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .settings-page-wrapper select,
+  .settings-page-wrapper input,
+  .settings-page-wrapper textarea {
+    padding: 7px 9px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .settings-page-wrapper textarea {
+    min-height: 60px;
+  }
+}
+
+/* Extra Wide Screens */
+@media (min-width: 1920px) {
+  .settings-page-wrapper .wrapper {
+    max-width: 1400px;
+  }
+
+  .settings-page-wrapper .overview-card {
+    padding: 28px;
+  }
+
+  .settings-page-wrapper .info-table {
+    max-width: 700px;
+  }
+}

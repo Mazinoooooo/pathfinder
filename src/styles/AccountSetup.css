@@ -1,0 +1,470 @@
+.modal-setup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 999;
+  padding: 15px;
+}
+
+.modal-setup > div {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-setup .setup-container {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-setup .tag-container {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-setup h4 {
+  margin: 10px 0 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-setup .tag-group {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.modal-setup h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-setup label {
+  display: block;
+  text-align: left;
+  margin: 5px 0 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  padding-left: 0.5rem;
+}
+
+.modal-setup select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.modal-setup input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.modal-setup .tag-section {
+  margin: 10px 0 20px;
+  text-align: left;
+}
+
+.modal-setup .tag {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 5px 5px 0 0;
+  border: 1px solid #ccc;
+  color: #333;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.modal-setup .tag.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #999;
+  color: #777;
+  pointer-events: none;
+}
+
+.modal-setup .tag:hover {
+  background-color: #eee;
+}
+
+.modal-setup .tag.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.modal-setup .setup-button:hover, .btn-save:hover {
+  background-color: #0056b3;
+}
+
+.modal-setup .setup-button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.modal-setup .btn-save {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .modal-setup {
+    padding: 10px;
+  }
+
+  .modal-setup > div {
+    padding: 18px;
+    border-radius: 12px;
+    max-height: 85vh;
+  }
+
+  .modal-setup .setup-container {
+    padding: 20px 18px;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .modal-setup .tag-container {
+    padding: 20px 18px;
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .modal-setup h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .modal-setup h4 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .modal-setup label {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  .modal-setup select,
+  .modal-setup input {
+    padding: 9px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .modal-setup .tag {
+    padding: 5px 10px;
+    margin: 4px 4px 0 0;
+    font-size: 12px;
+    border-radius: 16px;
+  }
+
+  .modal-setup .tag-section {
+    margin: 8px 0 16px;
+  }
+
+  .modal-setup .tag-group {
+    margin-bottom: 16px;
+  }
+
+  .modal-setup .setup-button,
+  .modal-setup .btn-save {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+/* Mobile Medium (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .modal-setup {
+    padding: 12px;
+  }
+
+  .modal-setup > div {
+    padding: 22px;
+    border-radius: 14px;
+    max-height: 88vh;
+  }
+
+  .modal-setup .setup-container {
+    padding: 25px 22px;
+    width: 92%;
+    max-width: 420px;
+  }
+
+  .modal-setup .tag-container {
+    padding: 25px 22px;
+    width: 92%;
+    max-width: 550px;
+  }
+
+  .modal-setup h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+
+  .modal-setup h4 {
+    font-size: 18px;
+    margin: 9px 0;
+  }
+
+  .modal-setup label {
+    font-size: 13px;
+  }
+
+  .modal-setup select,
+  .modal-setup input {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .modal-setup .tag {
+    padding: 6px 11px;
+    margin: 4px 4px 0 0;
+    font-size: 12px;
+    border-radius: 18px;
+  }
+
+  .modal-setup .tag-section {
+    margin: 9px 0 18px;
+  }
+
+  .modal-setup .tag-group {
+    margin-bottom: 18px;
+  }
+
+  .modal-setup .setup-button,
+  .modal-setup .btn-save {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 9px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-setup .setup-container {
+    max-width: 380px;
+  }
+
+  .modal-setup .tag-container {
+    max-width: 580px;
+  }
+
+  .modal-setup h3 {
+    font-size: 19px;
+  }
+
+  .modal-setup h4 {
+    font-size: 19px;
+  }
+}
+
+/* Laptop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .modal-setup .setup-container {
+    max-width: 400px;
+    padding: 30px 25px;
+  }
+
+  .modal-setup .tag-container {
+    max-width: 600px;
+    padding: 30px 25px;
+  }
+}
+
+/* Desktop Large (1441px and above) */
+@media (min-width: 1441px) {
+  .modal-setup > div {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .modal-setup .setup-container {
+    max-width: 440px;
+    padding: 35px 30px;
+  }
+
+  .modal-setup .tag-container {
+    max-width: 650px;
+    padding: 35px 30px;
+  }
+
+  .modal-setup h3 {
+    font-size: 22px;
+    margin-bottom: 22px;
+  }
+
+  .modal-setup h4 {
+    font-size: 21px;
+    margin: 12px 0;
+  }
+
+  .modal-setup label {
+    font-size: 15px;
+    margin: 6px 0;
+  }
+
+  .modal-setup select,
+  .modal-setup input {
+    padding: 11px;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .modal-setup .tag {
+    padding: 7px 14px;
+    margin: 6px 6px 0 0;
+    font-size: 14px;
+    border-radius: 22px;
+  }
+
+  .modal-setup .tag-section {
+    margin: 12px 0 22px;
+  }
+
+  .modal-setup .tag-group {
+    margin-bottom: 22px;
+  }
+
+  .modal-setup .setup-button,
+  .modal-setup .btn-save {
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 12px;
+  }
+}
+
+/* Landscape Mobile Fix */
+@media (max-width: 768px) and (orientation: landscape) {
+  .modal-setup {
+    padding: 8px;
+  }
+
+  .modal-setup > div {
+    padding: 15px;
+    max-height: 80vh;
+  }
+
+  .modal-setup .setup-container,
+  .modal-setup .tag-container {
+    padding: 18px 15px;
+  }
+
+  .modal-setup h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .modal-setup h4 {
+    font-size: 15px;
+    margin: 6px 0;
+  }
+
+  .modal-setup label {
+    font-size: 12px;
+    margin: 3px 0;
+  }
+
+  .modal-setup select,
+  .modal-setup input {
+    padding: 7px;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .modal-setup .tag {
+    padding: 4px 8px;
+    margin: 3px 3px 0 0;
+    font-size: 11px;
+  }
+
+  .modal-setup .tag-section {
+    margin: 6px 0 12px;
+  }
+
+  .modal-setup .tag-group {
+    margin-bottom: 12px;
+  }
+
+  .modal-setup .setup-button,
+  .modal-setup .btn-save {
+    padding: 8px;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+}
+
+/* Extra Wide Screens */
+@media (min-width: 1920px) {
+  .modal-setup .setup-container {
+    max-width: 480px;
+    padding: 40px 35px;
+  }
+
+  .modal-setup .tag-container {
+    max-width: 700px;
+    padding: 40px 35px;
+  }
+
+  .modal-setup h3 {
+    font-size: 24px;
+  }
+
+  .modal-setup h4 {
+    font-size: 22px;
+  }
+}
