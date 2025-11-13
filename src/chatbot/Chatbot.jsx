@@ -21,8 +21,6 @@ import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 export default function Chatbot() {
 
-  const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-
   // Modal Setup
   const [showSetupModal, setShowSetupModal] = useState(false);
   const [showTagModal, setShowTagModal] = useState(false);
@@ -222,7 +220,7 @@ const saveMessageToFirestore = async (sender, text) => {
       // --- Step 2a: Call ML FastAPI endpoint ---
       const API_URL = window.location.hostname.includes("devtunnels.ms")
         ? import.meta.env.VITE_API_URL
-        : "http://localhost:8000";
+        : import.meta.env.VITE_PY_API;
 
       const mlRes = await fetch(`${API_URL}/predict/`, {
         method: "POST",
@@ -290,7 +288,7 @@ const saveMessageToFirestore = async (sender, text) => {
 
       // --- Step 2d: Call Gemini API ---
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+        `${API_URL}/generate/`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -1,6 +1,10 @@
 // apiHelpers.js
 import { fetchUserProfile } from "./firebaseHelpers.js";
 
+const API_URL = window.location.hostname.includes("devtunnels.ms")
+  ? import.meta.env.VITE_API_URL      // dev tunnel URL
+  : import.meta.env.VITE_PY_API;       // production Render backend
+
 /**
  * Sends a user's profile to FastAPI for cousin group prediction.
  * @param {string} userId - Firestore user ID
@@ -11,7 +15,7 @@ export const getPrediction = async (userId) => {
     const profile = await fetchUserProfile(userId);
     if (!profile) return null;
 
-    const response = await fetch("http://localhost:8000/predict/", {
+    const response = await fetch(`${API_URL}/predict/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(profile),
@@ -25,3 +29,4 @@ export const getPrediction = async (userId) => {
     return null;
   }
 };
+
