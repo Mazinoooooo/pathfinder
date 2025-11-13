@@ -287,14 +287,11 @@ const saveMessageToFirestore = async (sender, text) => {
       }
 
       // --- Step 2d: Call Gemini API ---
-      const res = await fetch(
-        `${API_URL}/generate/`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-        }
-      );
+      const res = await fetch(`${API_URL}/generate/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: userMsg }),
+      });
       const data = await res.json();
       const reply =
         data.candidates?.[0]?.content?.parts?.[0]?.text ||
