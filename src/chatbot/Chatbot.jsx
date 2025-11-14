@@ -290,7 +290,7 @@ const saveMessageToFirestore = async (sender, text) => {
       const res = await fetch(`${API_URL}/generate/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: userMsg }),
+        body: JSON.stringify({ prompt }),
       });
       const data = await res.json();
       const reply =
