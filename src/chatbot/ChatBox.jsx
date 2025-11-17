@@ -57,11 +57,13 @@ export default function ChatBox({ messages, chatStarted, hasPreviousMessages, ch
         ))}
       </div>
 
-      <form className="chat-input-wrapper" id="chatForm" 
+      <form
+        className="chat-input-wrapper"
+        id="chatForm"
         onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit();
-      }}
+          e.preventDefault();
+          onSubmit();
+        }}
       >
         <textarea
           ref={textareaRef}
@@ -70,7 +72,7 @@ export default function ChatBox({ messages, chatStarted, hasPreviousMessages, ch
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              onSubmit(e);
+              onSubmit();
             }
           }}
           placeholder="Type your message..."
@@ -78,7 +80,7 @@ export default function ChatBox({ messages, chatStarted, hasPreviousMessages, ch
           className="chat-textarea"
           name="message"
         />
-        <button className="send-btn">
+        <button type="submit" className="send-btn">
           <FontAwesomeIcon icon={faPaperPlane} />
         </button>
       </form>
