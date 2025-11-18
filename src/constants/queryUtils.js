@@ -240,23 +240,15 @@ export const isRecommendationQuery = (text) => {
 export const isAcademicMisuse = (text) => {
   const lower = text.toLowerCase().replace(/[^\w\s]/gi, "").trim();
 
-  const fuse = new Fuse(courseList.map(c => c.toLowerCase()), {
-    threshold: 0.3, // Adjust as needed
-  });
+  // Fuse.js setup for course matching
+  const fuse = new Fuse(courseList.map(c => c.toLowerCase()), { threshold: 0.3 });
 
-    // Action + object combos (detect "make a system for ..." etc.)
-  const systemActions = ["create", "build", "develop", "design", "make", "generate", "construct", "propose"];
-  const systemObjects = ["system", "website", "app", "application", "program", "software", "project", "platform", "database"];
-  const systemContexts = ["for", "using", "based on", "with", "in", "about"];
-
-  // Adaptive project request detection
-  const isSystemRequest = systemActions.some(action =>
-    systemObjects.some(obj =>
-      lower.includes(action) && lower.includes(obj)
-    )
-  );
-
-  const redFlagPhrases = [
+  // Predefined phrase categories
+  const categories = {
+    systemActions: ["create", "build", "develop", "design", "make", "generate", "construct", "propose"],
+    systemObjects: ["system", "website", "app", "application", "program", "software", "project", "platform", "database"],
+    systemContexts: ["for", "using", "based on", "with", "in", "about"],
+    redFlagPhrases: [
     // Direct cheating/problem-solving
     "solve this", "calculate", "compute this", "what is the answer to",
     "show me the solution", "give me the answer", "help me solve",
@@ -326,9 +318,9 @@ export const isAcademicMisuse = (text) => {
     "how to write a full answer", "give me the essay version", 
     "give detailed output for", "what should be the content of", 
     "generate the full explanation", "provide the complete response"
-  ];
-  
-  const contextSensitivePhrases = [
+  ],
+
+    contextSensitive: [
     "define", "definition of", "explain", "explain this concept", "explain this term",
     "summarize", "summarize this", "summarize the", "discussion of", "discuss",
     "clarify", "elaborate on", "differentiate", "compare and contrast",
@@ -344,41 +336,35 @@ export const isAcademicMisuse = (text) => {
     "interpret the meaning behind", "what's your understanding of", 
     "provide a response to", "how do you answer this in class", 
     "what's the takeaway from", "how should this be explained"
-  ];
+  ],
 
-  const redFlagKeywords = [
+    keywords: [
     "homework", "assignment", "essay", "quiz", "test", "exam", "formula",
     "summary", "project", "worksheet", "activity", "paper", "module",
     "schoolwork", "task", "seatwork", "output", "reaction", "assessment",
     "reviewer", "questions", "experiment", "lab work", "subject matter", "chapter", "performance task", 
     "essay draft", "reflection", "diagnostic", "learning activity", "lesson", "subject discussion", 
     "graded task", "instruction", "explanation output"
-  ];
+  ]
+  };
 
-  const hasRedFlagPhrase = redFlagPhrases.some(phrase => lower.includes(phrase));
-  const hasMisuseKeyword = redFlagKeywords.some(keyword =>
-    lower.includes(keyword) &&
-    !lower.includes("course") &&
-    !lower.includes("subject") &&
-    !lower.includes("college")
+  // Helper functions
+  const includesAny = (arr) => arr.some(word => lower.includes(word));
+  const isSystemRequest = categories.systemActions.some(action =>
+    categories.systemObjects.some(obj => lower.includes(action) && lower.includes(obj))
   );
+  const looksLikeSystemRequest = isSystemRequest && includesAny(categories.systemContexts);
+
+  const hasRedFlagPhrase = includesAny(categories.redFlagPhrases);
+  const hasMisuseKeyword = includesAny(categories.keywords) &&
+                           !lower.includes("course") &&
+                           !lower.includes("subject") &&
+                           !lower.includes("college");
 
   const courseMatch = fuse.search(lower);
-  const isContextSensitiveMisuse =
-    contextSensitivePhrases.some(phrase => lower.includes(phrase)) &&
-    courseMatch.length === 0;
+  const isContextSensitiveMisuse = includesAny(categories.contextSensitive) && courseMatch.length === 0;
 
-  const looksLikeSystemRequest =
-    isSystemRequest &&
-    systemContexts.some(ctx => lower.includes(ctx)); // e.g. "for LGU", "for school", etc.
-
-  return (
-    hasRedFlagPhrase ||
-    hasMisuseKeyword ||
-    isContextSensitiveMisuse ||
-    looksLikeSystemRequest
-  );
-
+  return hasRedFlagPhrase || hasMisuseKeyword || isContextSensitiveMisuse || looksLikeSystemRequest;
 };
 
 export const getUserProfileString = (schoolType, track, courseDuration, tags) => `

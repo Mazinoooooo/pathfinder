@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Login.css";
+import ForgotPasswordModal from "./forgotPassword.jsx";
 
 // Firebase
 import { auth } from "../Firebase/firebaseConfig";
@@ -14,6 +15,7 @@ import { db } from "../Firebase/firebaseConfig"; // ✅ ensure db is exported fr
 export default function Login({ isOpen, onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showForgotModal, setShowForgotModal] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -76,6 +78,7 @@ export default function Login({ isOpen, onClose }) {
   };
 
   return (
+    <>
     <div className="modal-overlay-login">
       <div className="modal-content-login">
         <button className="modal-close" onClick={onClose} aria-label="Close">
@@ -127,7 +130,16 @@ export default function Login({ isOpen, onClose }) {
               <input type="checkbox" id="rememberMe" name="rememberMe" />
               Remember Me
             </label>
-            <a href="/forgot-password">Forgot Password?</a>
+            <a
+              href="#"
+              className="forgot-link"
+              onClick={(e) => {
+                e.preventDefault(); // prevents page jump
+                setShowForgotModal(true); // open your modal
+              }}
+            >
+              Forgot Password?
+            </a>
           </div>
 
           <button type="submit" className="login-button">Sign In</button>
@@ -147,5 +159,11 @@ export default function Login({ isOpen, onClose }) {
         </form>
       </div>
     </div>
+
+    {showForgotModal && (
+      <ForgotPasswordModal onClose={() => setShowForgotModal(false)} />
+    )}
+
+    </>
   );
 }

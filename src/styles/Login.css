@@ -156,6 +156,16 @@ label.Email, label.Password {
   transition: text-decoration 0.2s ease;
 }
 
+.forgot-link {
+  color: #fc2d2d;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.forgot-link:hover {
+  color: #e02525;
+}
+
 .form-group-remempassword a:hover {
   text-decoration: underline;
 }

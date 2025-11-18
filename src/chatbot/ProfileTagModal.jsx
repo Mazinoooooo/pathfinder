@@ -38,7 +38,7 @@ export default function ProfileTagModal({ selectedTags, setSelectedTags, onClose
     return (
         <div className="modal-setup">
             <div className="tag-container">
-                <h3>Select Profile Tags</h3>
+                <h3>Select Profile Description</h3>
 
                 {Object.entries(predefinedTags).map(([category, tags]) => (
                     <div key={category} className="tag-category">

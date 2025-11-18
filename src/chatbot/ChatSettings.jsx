@@ -214,7 +214,7 @@ export default function ChatSettings() {
                     </table>
                   </div>
                   <div className="section">
-                    <h4>Profile Tags</h4>
+                    <h4>Profile Description</h4>
                     <div className="tag-container">
                       {userData?.tags &&
                         Object.values(userData.tags)
@@ -318,7 +318,7 @@ export default function ChatSettings() {
                     <option value="2 and 4 year course">Open for 2 and 4 year course</option>
                   </select>
 
-                  <h4>Profile Tags</h4>
+                  <h4>Profile Description</h4>
                   <div className="tag-container">
                     {selectedTags &&
                       Object.values(selectedTags).flat().map((tag, index) => (
